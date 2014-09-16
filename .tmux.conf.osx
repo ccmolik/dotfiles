@@ -1,8 +1,10 @@
+#set -g status-left ' #[fg=green,bold]#H#[default]'
 set -g status-left-length 180
-set -g status-left "#[fg=colour240]: #(hostname): #[fg=blue]#(ifconfig | grep -A 2 10:dd:b1 | awk '/inet / { print \"Ethernet: \" $2 }') #[fg=colour166]#(ifconfig utun0 2>/dev/null | grep inet | awk '/inet/ { print \"VPN: \" $2 }')#[fg=colour136] #(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | gawk '/\\\\WSSID/ { print $2 }')#(ifconfig en0 | grep inet | awk '/inet / { print \" : \"$2}')"
-# RIGHT SIDE
 # hostname : ethernet: ethip VPN: vpnip SSID: wifiIP lists
-set -g status-right '#[fg=yellow,bold]#(cut -d " " -f 1-4 /proc/loadavg)#[default] #[colour20]%Y-%m-%d %H:%M:%S#[default]  #[fg=red]#(~/dotfiles/zelda-battery-tmux.sh)  '
+set -g status-interval 5
+set -g status-left "#[fg=colour240]: #(hostname): #[fg=blue]#(ifconfig | grep -A 2 10:dd:b1 | awk '/inet / { print \"Ethernet: \" $2 }') #[fg=colour166]#(ifconfig utun0 2>/dev/null | grep inet | awk '/inet/ { print \"VPN: \" $2 }')#[fg=colour136] #(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | gawk '/\\\\WSSID/ { print $2 }')#(ifconfig en0 | grep inet | awk '/inet / { print \" : \"$2}')#(~/dotfiles/mpdnp.sh)"
+# RIGHT SIDE
+set -g status-right '#[fg=yellow,bold]#(cut -d " " -f 2-4 /proc/loadavg)#[default] #[colour20]%Y-%m-%d %H:%M:%S#[default]  #[fg=red]#(~/dotfiles/zelda-battery-tmux.sh)  '
 set-window-option -g mode-keys vi
 set -g prefix C-a
 bind-key a send-prefix
@@ -51,4 +53,5 @@ bind-key -r J resize-pane -D 5
 bind-key -r K resize-pane -U 5
 bind-key -r H resize-pane -L 5
 bind-key -r L resize-pane -R 5
+
 #
