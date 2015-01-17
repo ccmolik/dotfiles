@@ -1,5 +1,5 @@
 set -g status-left-length 180
-set -g status-left "#[fg=colour240]: #(hostname): #[fg=blue]#(/sbin/ifconfig eth0 |  awk '/inet / { print \"Ethernet: \" $2 }')"
+set -g status-left "#[fg=colour240]: #(hostname): #[fg=blue]#(ip a | awk '/inet.*\ eth0/ { split($2,ip,"/"); print "Ethernet: " ip[1]; }')"
 # RIGHT SIDE
 # hostname : ethernet: ethip VPN: vpnip SSID: wifiIP lists
 set -g status-right '#[fg=yellow,bold]#(cut -d " " -f 1-4 /proc/loadavg)#[default] #[colour20]%Y-%m-%d %H:%M:%S#[default] ' 
