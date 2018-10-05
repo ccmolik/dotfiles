@@ -5,7 +5,8 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (## rust-mode go-eldoc yaml-mode fiplr go-mode exec-path-from-shell rebecca-theme auto-complete rbenv web-mode go-autocomplete puppet-mode))))
+    (## go-eldoc yaml-mode fiplr go-mode exec-path-from-shell rebecca-theme auto-complete rbenv web-mode go-autocomplete puppet-mode doom-themes emmet-mode)))
+ '(vc-annotate-very-old-color nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -33,7 +34,7 @@
   (local-set-key (kbd "M-.") 'godef-jump))
 
 (add-hook 'go-mode-hook 'go-mode-setup)
-(load-theme #'rebecca t)
+(load-theme #'doom-molokai t)
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
 
