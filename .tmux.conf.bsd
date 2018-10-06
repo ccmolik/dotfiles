@@ -1,5 +1,5 @@
 set -g status-left-length 180
-set -g status-left "#[fg=colour240]: #(hostname): #[fg=blue]#(ifconfig alc0 |  awk '/inet / { print \"Ethernet: \" $2 }')"
+set -g status-left "#[fg=colour240]: #(hostname): #[fg=blue]#(ifconfig iwn0 |  awk '/inet / { print \"wifi: \" $2 }')"
 # RIGHT SIDE
 # hostname : ethernet: ethip VPN: vpnip SSID: wifiIP lists
 set -g status-right '#[fg=yellow,bold]#(cut -d " " -f 1-4 /proc/loadavg)#[default] #[colour20]%Y-%m-%d %H:%M:%S#[default] ' 
@@ -42,9 +42,6 @@ set-option -g display-panes-colour colour196 #orange
 # clock
 set-window-option -g clock-mode-colour colour40 #green
 # mause
-set -g mouse-select-window off
-set -g mouse-select-pane off
-set -g mouse-resize-pane off
 # resize
 bind-key -r J resize-pane -D 5
 bind-key -r K resize-pane -U 5
