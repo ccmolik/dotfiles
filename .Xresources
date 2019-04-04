@@ -1,11 +1,13 @@
-URxvt.font:     xft:bitstream vera sans mono:size=11:antialias=true, xft:Symbola:size=11
-URxvt.boldFont: xft:bitstream vera sans mono:bold:size=11:antialias=true, xft:Symbola:size=11
-URxvt.perl-ext-common: default,matcher,selection-to-keyboarc
-URxvt.url-launcher: /usr/bin/xdg-open
-URxvt.matcher.button: 1
-
-!URxvt.letterSpace: -1
-
+!urxvt256c-ml.font:     xft:bitstream vera sans mono:size=11:antialias=true, xft:Symbola:size=11, xft:Noto Color Emoji:pixelsize=13, 
+urxvt256c-ml.font:     xft:Source Code Pro:size=11:antialias=true, xft:Noto Color Emoji:pixelsize=13,xft:Symbola:size=11
+urxvt256c-ml.boldFont: xft:Source Code Pro:bold:size=11:antialias=true, xft:Noto Color Emoji:pixelsize=13, xft:Symbola:size=11
+urxvt256c-ml.perl-ext-common: default,matcher
+urxvt256c-ml.url-launcher: /usr/bin/xdg-open
+urxvt256c-ml.matcher.button: 1
+urxvt256c-ml.scrollBar: false
+urxvt256c-ml.letterSpace: -1
+urxvt256c-ml.cursorBlink: 1
+urxvt256c-ml.cursorUnderline: 1
 ! special
 *.foreground:   #f8f8f2
 *.background:   #272822
